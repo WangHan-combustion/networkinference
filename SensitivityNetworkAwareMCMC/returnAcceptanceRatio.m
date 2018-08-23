@@ -1,0 +1,9 @@
+function [f] = returnAcceptanceRatio(u,x,algorithm,N,currentState,prevState,ll,pos,priorRange,inputX,data,delta,dataVariance,initVariance,currentReactionUpdateWeight,reverseReactionUpdateWeight,currentReactionWeightWithinModel,reverseReactionWeightWithinModel,changeReaction,AddDeleteReaction,modelProblem,initialIncludedSpeciesPool,targetNode,nReactions,reactionType,nSpecies,speciesReference,stoichiometricMatrix,reactantPool,firstStepF,secondStepF,firstStepR,secondStepR,changeReactionFirstStep,changeReactionSecondStep,AddDeleteReactionSwap,mean1First,mean2First,std1First,std2First,mean1Second,mean2Second,std1Second,std2Second)
+
+mean1First=u;
+
+[logN1,logD1]=calcN1D1(algorithm,N,currentState',prevState,ll,pos,priorRange,inputX,data,delta,dataVariance,initVariance,currentReactionUpdateWeight,reverseReactionUpdateWeight,currentReactionWeightWithinModel,reverseReactionWeightWithinModel,changeReaction,AddDeleteReaction,modelProblem,initialIncludedSpeciesPool,targetNode,nReactions,reactionType,nSpecies,speciesReference,stoichiometricMatrix,reactantPool,firstStepF,secondStepF,firstStepR,secondStepR,changeReactionFirstStep,changeReactionSecondStep,AddDeleteReactionSwap,mean1First,mean2First,std1First,std2First,mean1Second,mean2Second,std1Second,std2Second);
+
+f=calcAcceptanceRatio(logN1,logD1)*x(1)/x(2);
+
+ 
